@@ -189,26 +189,228 @@ class App extends React.Component {
             }
           }
           //top middle
-          else if (String(x)+String(y) === 21 || String(x)+String(y) === 51 || String(x)+String(y) === 81 || String(x)+String(y) === 24 || String(x)+String(y) === 54 || String(x)+String(y) === 84 || String(x)+String(y) === 27 || String(x)+String(y) === 57 || String(x)+String(y) === 87) {
+          else if (String(x)+String(y) === '21' || String(x)+String(y) === '51' || String(x)+String(y) === '81' || String(x)+String(y) === '24' || String(x)+String(y) === '54' || String(x)+String(y) === '84' || String(x)+String(y) === '27' || String(x)+String(y) === '57' || String(x)+String(y) === '87') {
             //11
+            let index11 = this.solverobj[String(x-1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index11 > -1) {
+              this.solverobj[String(x-1)+String(y)].splice(index11, 1);
+            }
             //31
+            let index31 = this.solverobj[String(x+1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index31 > -1) {
+              this.solverobj[String(x+1)+String(y)].splice(index31, 1);
+            }
             //12
+            let index12 = this.solverobj[String(x-1)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index12 > -1) {
+              this.solverobj[String(x-1)+String(y+1)].splice(index12, 1);
+            }
             //22
+            let index22 = this.solverobj[String(x)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index22 > -1) {
+              this.solverobj[String(x)+String(y+1)].splice(index22, 1);
+            }
             //32
+            let index32 = this.solverobj[String(x+1)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index32 > -1) {
+              this.solverobj[String(x+1)+String(y+1)].splice(index32, 1);
+            }
             //13
+            let index13 = this.solverobj[String(x-1)+String(y+2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index13 > -1) {
+              this.solverobj[String(x-1)+String(y+2)].splice(index13, 1);
+            }
             //23
+            let index23 = this.solverobj[String(x)+String(y+2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index23 > -1) {
+              this.solverobj[String(x)+String(y+2)].splice(index23, 1);
+            }
             //33
+            let index33 = this.solverobj[String(x+1)+String(y+2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index33 > -1) {
+              this.solverobj[String(x+1)+String(y+2)].splice(index33, 1);
+            }
           }
           //top right
+          else if (String(x)+String(y) === '31' || String(x)+String(y) === '61' || String(x)+String(y) === '91' || String(x)+String(y) === '34' || String(x)+String(y) === '64' || String(x)+String(y) === '94' || String(x)+String(y) === '37' || String(x)+String(y) === '67' || String(x)+String(y) === '97') {
+            //11
+            let index11 = this.solverobj[String(x-2)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index11 > -1) {
+              this.solverobj[String(x-2)+String(y)].splice(index11, 1);
+            }
+            //21
+            let index21 = this.solverobj[String(x-1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index21 > -1) {
+              this.solverobj[String(x-1)+String(y)].splice(index21, 1);
+            }
+            //12
+            let index12 = this.solverobj[String(x-2)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index12 > -1) {
+              this.solverobj[String(x-2)+String(y+1)].splice(index12, 1);
+            }
+            //22
+            let index22 = this.solverobj[String(x-1)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index22 > -1) {
+              this.solverobj[String(x-1)+String(y+1)].splice(index22, 1);
+            }
+            //32
+            let index32 = this.solverobj[String(x)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index32 > -1) {
+              this.solverobj[String(x)+String(y+1)].splice(index32, 1);
+            }
+            //13
+            let index13 = this.solverobj[String(x-2)+String(y+2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index13 > -1) {
+              this.solverobj[String(x-2)+String(y+2)].splice(index13, 1);
+            }
+            //23
+            let index23 = this.solverobj[String(x-1)+String(y+2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index23 > -1) {
+              this.solverobj[String(x-1)+String(y+2)].splice(index23, 1);
+            }
+            //33
+            let index33 = this.solverobj[String(x)+String(y+2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index33 > -1) {
+              this.solverobj[String(x)+String(y+2)].splice(index33, 1);
+            }
+          }
           //midle left
+          else if (String(x)+String(y) === '12' || String(x)+String(y) === '42' || String(x)+String(y) === '72' || String(x)+String(y) === '15' || String(x)+String(y) === '45' || String(x)+String(y) === '75' || String(x)+String(y) === '18' || String(x)+String(y) === '48' || String(x)+String(y) === '78') {
+            //11
+            let index11 = this.solverobj[String(x)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index11 > -1) {
+              this.solverobj[String(x)+String(y-1)].splice(index11, 1);
+            }
+            //21
+            let index21 = this.solverobj[String(x+1)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index21 > -1) {
+              this.solverobj[String(x+1)+String(y-1)].splice(index21, 1);
+            }
+            //31
+            let index31 = this.solverobj[String(x+2)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index31 > -1) {
+              this.solverobj[String(x+2)+String(y-1)].splice(index31, 1);
+            }
+            //22
+            let index22 = this.solverobj[String(x+1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index22 > -1) {
+              this.solverobj[String(x+1)+String(y)].splice(index22, 1);
+            }
+            //32
+            let index32 = this.solverobj[String(x+2)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index32 > -1) {
+              this.solverobj[String(x+2)+String(y)].splice(index32, 1);
+            }
+            //13
+            let index13 = this.solverobj[String(x)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index13 > -1) {
+              this.solverobj[String(x)+String(y+1)].splice(index13, 1);
+            }
+            //23
+            let index23 = this.solverobj[String(x+1)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index23 > -1) {
+              this.solverobj[String(x+1)+String(y+1)].splice(index23, 1);
+            }
+            //33
+            let index33 = this.solverobj[String(x+2)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index33 > -1) {
+              this.solverobj[String(x+2)+String(y+1)].splice(index33, 1);
+            }
+          }
           //middle middle
+          else if (String(x)+String(y) === '22' || String(x)+String(y) === '52' || String(x)+String(y) === '82' || String(x)+String(y) === '25' || String(x)+String(y) === '55' || String(x)+String(y) === '85' || String(x)+String(y) === '28' || String(x)+String(y) === '58' || String(x)+String(y) === '88') {
+            //11
+            let index11 = this.solverobj[String(x-1)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index11 > -1) {
+              this.solverobj[String(x-1)+String(y-1)].splice(index11, 1);
+            }
+            //21
+            let index21 = this.solverobj[String(x)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index21 > -1) {
+              this.solverobj[String(x)+String(y-1)].splice(index21, 1);
+            }
+            //31
+            let index31 = this.solverobj[String(x+1)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index31 > -1) {
+              this.solverobj[String(x+1)+String(y-1)].splice(index31, 1);
+            }
+            //12
+            let index12 = this.solverobj[String(x-1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index12 > -1) {
+              this.solverobj[String(x-1)+String(y)].splice(index12, 1);
+            }
+            //32
+            let index32 = this.solverobj[String(x+1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index32 > -1) {
+              this.solverobj[String(x+1)+String(y)].splice(index32, 1);
+            }
+            //13
+            let index13 = this.solverobj[String(x-1)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index13 > -1) {
+              this.solverobj[String(x-1)+String(y+1)].splice(index13, 1);
+            }
+            //23
+            let index23 = this.solverobj[String(x)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index23 > -1) {
+              this.solverobj[String(x)+String(y+1)].splice(index23, 1);
+            }
+            //33
+            let index33 = this.solverobj[String(x+1)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index33 > -1) {
+              this.solverobj[String(x+1)+String(y+1)].splice(index33, 1);
+            }
+          }
           //middle right
+          else if (String(x)+String(y) === '32' || String(x)+String(y) === '62' || String(x)+String(y) === '92' || String(x)+String(y) === '35' || String(x)+String(y) === '65' || String(x)+String(y) === '95' || String(x)+String(y) === '38' || String(x)+String(y) === '68' || String(x)+String(y) === '98') {
+            //11
+            let index11 = this.solverobj[String(x-2)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index11 > -1) {
+              this.solverobj[String(x-2)+String(y-1)].splice(index11, 1);
+            }
+            //21
+            let index21 = this.solverobj[String(x-1)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index21 > -1) {
+              this.solverobj[String(x-1)+String(y-1)].splice(index21, 1);
+            }
+            //31
+            let index31 = this.solverobj[String(x)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index31 > -1) {
+              this.solverobj[String(x)+String(y-1)].splice(index31, 1);
+            }
+            //12
+            let index12 = this.solverobj[String(x-2)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index12 > -1) {
+              this.solverobj[String(x-2)+String(y)].splice(index12, 1);
+            }
+            //22
+            let index22 = this.solverobj[String(x-1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index22 > -1) {
+              this.solverobj[String(x-1)+String(y)].splice(index22, 1);
+            }
+            //13
+            let index13 = this.solverobj[String(x-2)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index13 > -1) {
+              this.solverobj[String(x-2)+String(y+1)].splice(index13, 1);
+            }
+            //23
+            let index23 = this.solverobj[String(x-1)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index23 > -1) {
+              this.solverobj[String(x-1)+String(y+1)].splice(index23, 1);
+            }
+            //33
+            let index33 = this.solverobj[String(x)+String(y+1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index33 > -1) {
+              this.solverobj[String(x)+String(y+1)].splice(index33, 1);
+            }
+          }
           //bottom left
           //bottom middle
           //bottom right
         //Filling in the only option
         } else if (this.solverobj[String(x)+String(y)].length === 1) {
           this.solverobj[String(x)+String(y)] = String(this.solverobj[String(x)+String(y)][0]);
+          this.setState({idk: 1})
+          console.log("maybe this will work")
         }
       }
     }
