@@ -1,0 +1,18 @@
+.grid-container {
+    display: flex;
+    width: 27em;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    outline: 6px solid blue;
+}
+
+.big-box {
+    display: flex;
+    height: 9em;
+    width: 9em;
+    outline: 3px solid blue;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
