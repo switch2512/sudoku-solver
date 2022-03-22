@@ -7,7 +7,9 @@ class App extends React.Component {
   constructor(props) {
     super(props)
 
-
+    this.state = {
+      counter: 0
+    }
     this.inputhandler = this.inputhandler.bind(this)
     this.calchandler = this.calchandler.bind(this)
   }
@@ -101,6 +103,122 @@ class App extends React.Component {
   }
 
   calchandler() {
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.onlylogichandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.onlylogichandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.onlylogichandler()
+    this.versioncounter()
+    console.log(this.solverobj)
+  }
+
+  onlylogichandler() {
+    for (let p = 1; p < 10; p++) {
+      for (let i = 1; i < 10; i ++) {
+        let tracker = {};
+        //additions for quadrants
+        let xaddition = 0;
+        let yaddition = 0;
+        if (i === 2) {
+          xaddition = 3;
+        } else if (i === 3) {
+          xaddition = 6;
+        } else if (i === 4) {
+          xaddition = 0;
+          yaddition = 3;
+        } else if (i === 5) {
+          xaddition = 3;
+          yaddition = 3;
+        } else if (i === 6) {
+          xaddition = 6;
+          yaddition = 3;
+        } else if (i === 7) {
+          xaddition = 0;
+          yaddition = 6;
+        } else if (i === 8) {
+          xaddition = 3;
+          yaddition = 6;
+        } else if (i === 9) {
+          xaddition = 6;
+          yaddition = 6;
+        }
+        let counter = 1;
+        for (let x = 1; x < 4; x++) {
+          for (let y = 1; y < 4; y++) {
+            if (typeof this.solverobj[String(x + xaddition)+String(y + yaddition)] === 'string') {
+              continue
+            }
+            let index = this.solverobj[String(x + xaddition)+String(y + yaddition)].indexOf(String(p))
+            if (index > -1) {
+              let location = String(x + xaddition) + String(y + yaddition);
+              tracker[counter] = location
+              counter ++;
+            } else {
+              continue
+            }
+          }
+        }
+        if (Object.keys(tracker).length === 1){
+          this.solverobj[tracker[1]] = String(p)
+          console.log(tracker)
+          console.log(p)
+        } else {
+          continue
+        }
+      }
+    }
+  }
+
+  versioncounter() {
+    let plus = this.state.counter + 1;
+    this.setState({counter: plus}, alert("CLICK OK TO DOWNLOAD 1 TROJAN HORSE VIRUS AND SOLVE THE PUZZLE"))
+  }
+
+  lastremaininghandler() {
+    for (let x=1; x < 10; x++) {
+      for (let y=1; y < 10; y++) {
+        if (this.solverobj[String(x)+String(y)].length === 1) {
+          this.solverobj[String(x)+String(y)] = String(this.solverobj[String(x)+String(y)][0]);
+        }
+      }
+    }
+  }
+
+  removinghandler() {
     for (let x=1; x < 10; x++) {
       for (let y=1; y < 10; y++) {
         if (typeof this.solverobj[String(x)+String(y)] === 'string'){
@@ -461,28 +579,84 @@ class App extends React.Component {
             //31
             let index31 = this.solverobj[String(x+1)+String(y-2)].indexOf(this.solverobj[String(x)+String(y)]);
             if (index31 > -1) {
-              this.solverobj[String(x+2)+String(y-2)].splice(index31, 1);
+              this.solverobj[String(x+1)+String(y-2)].splice(index31, 1);
             }
             //12
-            let index12 = this.solverobj[String(x+1)+String(y-2)].indexOf(this.solverobj[String(x)+String(y)]);
+            let index12 = this.solverobj[String(x-1)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
             if (index12 > -1) {
-              this.solverobj[String(x+2)+String(y-2)].splice(index12, 1);
+              this.solverobj[String(x-1)+String(y-1)].splice(index12, 1);
             }
             //22
+            let index22 = this.solverobj[String(x)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index22 > -1) {
+              this.solverobj[String(x)+String(y-1)].splice(index22, 1);
+            }
             //32
+            let index32 = this.solverobj[String(x+1)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index32 > -1) {
+              this.solverobj[String(x+1)+String(y-1)].splice(index32, 1);
+            }
             //13
+            let index13 = this.solverobj[String(x-1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index13 > -1) {
+              this.solverobj[String(x-1)+String(y)].splice(index13, 1);
+            }
             //33
+            let index33 = this.solverobj[String(x+1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index33 > -1) {
+              this.solverobj[String(x+1)+String(y)].splice(index33, 1);
+            }
           }
           //bottom right
+          else if (String(x)+String(y) === '33' || String(x)+String(y) === '63' || String(x)+String(y) === '93' || String(x)+String(y) === '36' || String(x)+String(y) === '66' || String(x)+String(y) === '96' || String(x)+String(y) === '39' || String(x)+String(y) === '69' || String(x)+String(y) === '99') {
+            //11
+            let index11 = this.solverobj[String(x-2)+String(y-2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index11 > -1) {
+              this.solverobj[String(x-2)+String(y-2)].splice(index11, 1);
+            }
+            //21
+            let index21 = this.solverobj[String(x-1)+String(y-2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index21 > -1) {
+              this.solverobj[String(x-1)+String(y-2)].splice(index21, 1);
+            }
+            //31
+            let index31 = this.solverobj[String(x)+String(y-2)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index31 > -1) {
+              this.solverobj[String(x)+String(y-2)].splice(index31, 1);
+            }
+            //12
+            let index12 = this.solverobj[String(x-2)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index12 > -1) {
+              this.solverobj[String(x-2)+String(y-1)].splice(index12, 1);
+            }
+            //22
+            let index22 = this.solverobj[String(x-1)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index22 > -1) {
+              this.solverobj[String(x-1)+String(y-1)].splice(index22, 1);
+            }
+            //32
+            let index32 = this.solverobj[String(x)+String(y-1)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index32 > -1) {
+              this.solverobj[String(x)+String(y-1)].splice(index32, 1);
+            }
+            //13
+            let index13 = this.solverobj[String(x-2)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index13 > -1) {
+              this.solverobj[String(x-2)+String(y)].splice(index13, 1);
+            }
+            //23
+            let index23 = this.solverobj[String(x-1)+String(y)].indexOf(this.solverobj[String(x)+String(y)]);
+            if (index23 > -1) {
+              this.solverobj[String(x-1)+String(y)].splice(index23, 1);
+            }
+          }
+
         //Filling in the only option
-        } else if (this.solverobj[String(x)+String(y)].length === 1) {
-          this.solverobj[String(x)+String(y)] = String(this.solverobj[String(x)+String(y)][0]);
-          this.setState({idk: 1})
-          console.log("maybe this will work")
+        } else {
+          continue
         }
       }
     }
-    console.log(this.solverobj)
   }
 
   render() {
