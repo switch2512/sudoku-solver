@@ -280,7 +280,7 @@ class App extends React.Component {
 
   versioncounter() {
     let plus = this.state.counter + 1;
-    this.setState({counter: plus}, alert("CLICK OK TO DOWNLOAD 1 TROJAN HORSE VIRUS AND SOLVE THE PUZZLE"))
+    this.setState({counter: plus}, console.log("Downloading Random Youtube Video"))
   }
 
   lastremaininghandler() {
