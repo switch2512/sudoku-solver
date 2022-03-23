@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      counter: 0
+      counter: 1
     }
     this.inputhandler = this.inputhandler.bind(this)
     this.calchandler = this.calchandler.bind(this)
@@ -103,21 +103,15 @@ class App extends React.Component {
   }
 
   calchandler() {
+    this.fixingmistakes()
     this.removinghandler()
     this.lastremaininghandler()
     this.removinghandler()
-    this.lastremaininghandler()
-    this.removinghandler()
-    this.lastremaininghandler()
-    this.removinghandler()
-    this.lastremaininghandler()
-    this.removinghandler()
-    this.lastremaininghandler()
-    this.removinghandler()
-    this.lastremaininghandler()
     this.onlylogichandler()
     this.removinghandler()
-    this.lastremaininghandler()
+    this.columnlogichandler()
+    this.removinghandler()
+    this.rowlogichandler()
     this.removinghandler()
     this.lastremaininghandler()
     this.removinghandler()
@@ -125,12 +119,11 @@ class App extends React.Component {
     this.removinghandler()
     this.lastremaininghandler()
     this.removinghandler()
-    this.lastremaininghandler()
-    this.removinghandler()
-    this.lastremaininghandler()
     this.onlylogichandler()
     this.removinghandler()
-    this.lastremaininghandler()
+    this.columnlogichandler()
+    this.removinghandler()
+    this.rowlogichandler()
     this.removinghandler()
     this.lastremaininghandler()
     this.removinghandler()
@@ -138,13 +131,95 @@ class App extends React.Component {
     this.removinghandler()
     this.lastremaininghandler()
     this.removinghandler()
-    this.lastremaininghandler()
-    this.removinghandler()
-    this.lastremaininghandler()
     this.onlylogichandler()
+    this.removinghandler()
+    this.columnlogichandler()
+    this.removinghandler()
+    this.rowlogichandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.onlylogichandler()
+    this.removinghandler()
+    this.columnlogichandler()
+    this.removinghandler()
+    this.rowlogichandler()
+    this.removinghandler()
+    this.lastremaininghandler()
+    this.removinghandler()
+    this.lastremaininghandler()
     this.versioncounter()
     console.log(this.solverobj)
+    console.log(this.state.counter)
   }
+
+  fixingmistakes() {
+    for (let x=1; x < 10; x++) {
+      for (let y=1; y<10; y++) {
+        if (this.solverobj[String(x)+String(y)] === "") {
+          this.solverobj[String(x)+String(y)] = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+        } else {
+          continue
+        }
+      }
+    }
+  }
+
+  rowlogichandler() {
+    for (let p=1; p<10; p++) {
+      for (let y=1; y<10; y++) {
+        let tracker = {};
+        let counter = 1;
+        for (let x=1; x<10; x++) {
+          if (typeof this.solverobj[String(x)+String(y)] === 'string') {
+            continue
+          }
+          let index = this.solverobj[String(x)+String(y)].indexOf(String(p))
+          if (index > -1) {
+            let location = String(x) + String(y);
+            tracker[counter] = location
+            counter ++;
+          } else {
+            continue
+          }
+        }
+        if (Object.keys(tracker).length === 1){
+          this.solverobj[tracker[1]] = String(p)
+      } else {
+        continue
+      }
+    }
+  }}
+
+  columnlogichandler() {
+    for (let p=1; p<10; p++) {
+      for (let x=1; x<10; x++) {
+        let tracker = {};
+        let counter = 1;
+        for (let y=1; y<10; y++) {
+          if (typeof this.solverobj[String(x)+String(y)] === 'string') {
+            continue
+          }
+          let index = this.solverobj[String(x)+String(y)].indexOf(String(p))
+          if (index > -1) {
+            let location = String(x) + String(y);
+            tracker[counter] = location
+            counter ++;
+          } else {
+            continue
+          }
+        }
+        if (Object.keys(tracker).length === 1){
+          this.solverobj[tracker[1]] = String(p)
+      } else {
+        continue
+      }
+    }
+  }}
 
   onlylogichandler() {
     for (let p = 1; p < 10; p++) {
@@ -221,7 +296,7 @@ class App extends React.Component {
   removinghandler() {
     for (let x=1; x < 10; x++) {
       for (let y=1; y < 10; y++) {
-        if (typeof this.solverobj[String(x)+String(y)] === 'string'){
+        if (typeof this.solverobj[String(x)+String(y)] === "string"){
           //removing options from row
           let right = 9 - x;
           //removing options from right
